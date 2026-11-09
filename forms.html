@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en" data-page="forms">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Forms · Demo Store (test site)</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="/assets/site.css">
+<script src="/assets/datalayer.js"></script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NXT4LB98');</script>
+<!-- End Google Tag Manager -->
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NXT4LB98"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<main>
+<h1>Forms</h1>
+<p class="muted">The kinds of forms found on client sites. Each one shows up differently in GTM; the
+<a href="/tracking-map.html">tracking map</a> says which trigger to use. Use made-up details.</p>
+
+<section class="panel" id="quote">
+<h2>1. Request a quote <span class="tag">normal submit + page reload</span></h2>
+<p class="small muted">Submits the classic way to a thank-you page. GTM's Form Submission trigger sees it, and so does a
+Page View trigger on /form-thanks.html. No personal details here, so nothing personal ends up in the address bar.</p>
+<form id="quote-form" class="form" action="/form-thanks.html" method="get" data-form-name="quote">
+<input type="hidden" name="form" value="quote">
+<label>Service <select name="service" required><option value="">Choose…</option><option>Website tracking</option>
+<option>Media buying</option><option>Analytics audit</option></select></label>
+<fieldset><legend>Budget</legend>
+<label class="inline"><input type="radio" name="budget" value="under-10k" required> Under 10k</label>
+<label class="inline"><input type="radio" name="budget" value="10k-50k"> 10k–50k</label>
+<label class="inline"><input type="radio" name="budget" value="50k-plus"> 50k+</label></fieldset>
+<fieldset><legend>Channels</legend>
+<label class="inline"><input type="checkbox" name="channel" value="search"> Search</label>
+<label class="inline"><input type="checkbox" name="channel" value="social"> Social</label>
+<label class="inline"><input type="checkbox" name="channel" value="display"> Display</label>
+<label class="inline"><input type="checkbox" name="channel" value="video"> Video</label></fieldset>
+<label>Start date <input type="date" name="start"></label>
+<label>Company size <input type="range" name="size" min="1" max="5" value="2"></label>
+<button class="button">Request quote</button>
+</form>
+</section>
+
+<section class="panel" id="appointment">
+<h2>2. Book an appointment <span class="tag">multi-step, no reload</span></h2>
+<form id="appointment-form" class="form" data-form-name="appointment" novalidate>
+<div data-step="1">
+<label>Branch <select name="branch" required><option value="">Choose…</option><option>Dubai Mall</option>
+<option>Abu Dhabi</option><option>Riyadh</option></select></label>
+<label>Service <select name="service" required><option value="">Choose…</option><option>Consultation</option>
+<option>Test drive</option><option>Repair</option></select></label>
+<button type="button" class="button" data-next>Next</button></div>
+<div data-step="2" hidden>
+<label>Date <input type="date" name="date" required></label>
+<label>Time <select name="time" required><option value="">Choose…</option><option>10:00</option><option>14:00</option>
+<option>18:00</option></select></label>
+<button type="button" class="button secondary" data-back>Back</button> <button type="button" class="button" data-next>Next</button></div>
+<div data-step="3" hidden>
+<label>Name <input name="name" required autocomplete="off"></label>
+<label>Mobile <input name="mobile" type="tel" required autocomplete="off"></label>
+<button type="button" class="button secondary" data-back>Back</button> <button class="button">Book</button></div>
+<p class="steps">Step <span data-current>1</span> of 3</p>
+</form>
+<p id="appointment-done" class="note" hidden>Booked (not really).</p>
+</section>
+
+<section class="panel" id="callback">
+<h2>3. Request a callback <span class="tag">custom validation errors</span></h2>
+<p class="small muted">Submit it empty to see form_error with the fields that failed.</p>
+<form id="callback-form" class="form" data-form-name="callback" novalidate>
+<label>Mobile number <input name="phone" type="tel" placeholder="+971 50 000 0000" autocomplete="off"></label>
+<p class="error" data-for="phone" hidden>Enter a valid number, 9–15 digits.</p>
+<label>Best time <select name="slot"><option value="">Choose…</option><option>Morning</option><option>Afternoon</option>
+<option>Evening</option></select></label>
+<p class="error" data-for="slot" hidden>Choose a time.</p>
+<label class="inline"><input type="checkbox" name="agree"> I agree to be called</label>
+<p class="error" data-for="agree" hidden>Please agree to be called.</p>
+<button class="button">Call me back</button>
+</form>
+<p id="callback-done" class="note" hidden>We'll call you (not really).</p>
+</section>
+
+<section class="panel" id="careers">
+<h2>4. Careers: upload a CV <span class="tag">file upload</span></h2>
+<form id="cv-form" class="form" data-form-name="careers">
+<label>Position <select name="position" required><option value="">Choose…</option><option>Analyst</option>
+<option>Media planner</option></select></label>
+<label>CV <input type="file" name="cv" accept=".pdf,.doc,.docx" required></label>
+<button class="button">Apply</button>
+</form>
+<p id="cv-done" class="note" hidden>Application received (nothing was uploaded).</p>
+</section>
+
+<section class="panel" id="iframe-form">
+<h2>5. Form inside an iframe <span class="tag">third-party embed</span></h2>
+<p class="small muted">Like a HubSpot or Typeform embed. GTM on this page can't see inside the frame; the frame
+reports the submission with postMessage and the page pushes iframe_form_submit.</p>
+<iframe class="frame" src="/embed/iframe-form.html" title="Partner enquiry form"></iframe>
+<p id="iframe-done" class="note" hidden>The page heard the iframe form submission.</p>
+</section>
+
+<section class="panel">
+<h2>Other forms on the site</h2>
+<ul>
+<li>Site search in the header (normal submit to /search.html?q=…)</li>
+<li>Newsletter sign-up in the footer (no reload)</li>
+<li>Contact form on <a href="/contact.html">Contact</a> (no reload)</li>
+<li>Sign in and create account on <a href="/account.html">Account</a></li>
+<li>Coupon code in the <a href="/cart.html">Cart</a>, and the two-step checkout</li>
+</ul>
+</section>
+</main>
+<script src="/assets/layout.js"></script>
+<script src="/assets/consent.js"></script>
+<script src="/assets/shop.js"></script>
+<script src="/assets/interactions.js"></script>
+<script src="/assets/dlviewer.js"></script>
+</body>
+</html>

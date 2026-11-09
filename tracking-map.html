@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en" data-page="tracking-map">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Tracking map · Demo Store (test site)</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="/assets/site.css">
+<script src="/assets/datalayer.js"></script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NXT4LB98');</script>
+<!-- End Google Tag Manager -->
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NXT4LB98"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<main>
+<h1>Tracking map</h1>
+<p class="muted">Everything on this site that tracking can hook into. Open the <strong>dataLayer</strong> button (bottom
+left) to watch events as you click. Event names follow GA4's recommended events where one exists.</p>
+<div style="overflow-x:auto"><table>
+<thead><tr><th>Element</th><th>Where</th><th>What appears in the dataLayer</th><th>GTM trigger to use</th></tr></thead>
+<tbody>
+<tr><td>Page data (every page, before GTM)</td><td>page load</td><td><code>page_type, page_language, site_environment, user_status, user_id (when signed in)</code></td><td>Data Layer Variables</td></tr>
+<tr><td>Consent defaults and banner</td><td>every page / banner buttons</td><td><code>gtag consent default + update, consent_update</code></td><td>Consent Initialization; Custom Event</td></tr>
+<tr><td>Language switch</td><td>top bar</td><td><code>language_change</code></td><td>Custom Event</td></tr>
+<tr><td>Promotion banners</td><td>Shop home</td><td><code>view_promotion, select_promotion</code></td><td>Custom Event</td></tr>
+<tr><td>Product lists</td><td>Shop home, Search</td><td><code>view_item_list, select_item</code></td><td>Custom Event</td></tr>
+<tr><td>Category filter</td><td>Shop home</td><td><code>filter_apply</code></td><td>Custom Event</td></tr>
+<tr><td>Site search</td><td>header (normal submit)</td><td><code>search (on results page); ?q= in the URL</code></td><td>Custom Event, or Page View + URL query</td></tr>
+<tr><td>Product page</td><td>Product</td><td><code>view_item, select_variant</code></td><td>Custom Event</td></tr>
+<tr><td>Add to cart / wishlist</td><td>Product, Cart (+ / −)</td><td><code>add_to_cart, remove_from_cart, add_to_wishlist</code></td><td>Custom Event</td></tr>
+<tr><td>Cart and coupon</td><td>Cart</td><td><code>view_cart, coupon_apply (valid / invalid)</code></td><td>Custom Event</td></tr>
+<tr><td>Checkout</td><td>Checkout</td><td><code>begin_checkout, add_shipping_info, add_payment_info</code></td><td>Custom Event</td></tr>
+<tr><td>Purchase</td><td>Thank-you (once per order)</td><td><code>purchase</code></td><td>Custom Event</td></tr>
+<tr><td>Refund</td><td>Account → orders</td><td><code>refund</code></td><td>Custom Event</td></tr>
+<tr><td>Sign in / create account / sign out</td><td>Account</td><td><code>login, sign_up (method), user_data_ready, logout</code></td><td>Custom Event</td></tr>
+<tr><td>Any form, first touch</td><td>all forms</td><td><code>form_start</code></td><td>Custom Event</td></tr>
+<tr><td>Newsletter</td><td>footer (no reload)</td><td><code>newsletter_signup, form_error</code></td><td>Custom Event</td></tr>
+<tr><td>Contact form</td><td>Contact (no reload)</td><td><code>generate_lead (+ lead_email: deliberate mistake)</code></td><td>Custom Event</td></tr>
+<tr><td>Quote form</td><td>Forms (normal submit + reload)</td><td><code>gtm.formSubmit, then /form-thanks.html</code></td><td>Form Submission, or Page View on the thank-you URL</td></tr>
+<tr><td>Appointment (multi-step)</td><td>Forms</td><td><code>form_step, form_error, generate_lead</code></td><td>Custom Event</td></tr>
+<tr><td>Callback (validation)</td><td>Forms</td><td><code>form_error (error_fields), generate_lead</code></td><td>Custom Event</td></tr>
+<tr><td>CV upload</td><td>Forms</td><td><code>cv_upload (file_type only)</code></td><td>Custom Event</td></tr>
+<tr><td>Iframe form</td><td>Forms</td><td><code>iframe_form_submit (via postMessage)</code></td><td>Custom Event (GTM can't see inside the iframe)</td></tr>
+<tr><td>Links: outbound, map, tel:, mailto:, WhatsApp, PDF, jump, image</td><td>Clicks page, footer, Contact</td><td><code>nothing from the site; GTM sends gtm.linkClick</code></td><td>Click – Just Links</td></tr>
+<tr><td>Plain buttons, icon button, data-attribute link</td><td>Clicks page</td><td><code>nothing from the site; GTM sends gtm.click</code></td><td>Click – All Elements (+ Auto-Event Variables)</td></tr>
+<tr><td>Main call-to-action button</td><td>Clicks page</td><td><code>cta_click</code></td><td>Custom Event</td></tr>
+<tr><td>Accordion / FAQ / product details</td><td>Clicks page, Product</td><td><code>accordion_open</code></td><td>Custom Event</td></tr>
+<tr><td>Tabs, carousel</td><td>Clicks page</td><td><code>tab_view, carousel_navigate</code></td><td>Custom Event</td></tr>
+<tr><td>Pop-up</td><td>Clicks page</td><td><code>modal_open, modal_close (modal_action)</code></td><td>Custom Event, or Element Visibility</td></tr>
+<tr><td>Copy code, rating, share</td><td>Clicks page, Product</td><td><code>promo_code_copy, rating_submit, share</code></td><td>Custom Event</td></tr>
+<tr><td>Chat widget</td><td>every page (bottom right)</td><td><code>chat_open, chat_close</code></td><td>Custom Event</td></tr>
+<tr><td>YouTube video</td><td>Clicks page</td><td><code>gtm.video (start / progress / complete)</code></td><td>YouTube Video</td></tr>
+<tr><td>Scroll</td><td>Clicks page (long)</td><td><code>gtm.scrollDepth</code></td><td>Scroll Depth</td></tr>
+<tr><td>Element visibility</td><td>#visibility-target; #lazy-offer appears after 3 s</td><td><code>gtm.elementVisibility</code></td><td>Element Visibility (observe DOM changes for the late one)</td></tr>
+<tr><td>Time on page</td><td>any page</td><td><code>gtm.timer</code></td><td>Timer</td></tr>
+<tr><td>JavaScript error</td><td>Clicks page button</td><td><code>gtm.pageError</code></td><td>JavaScript Error</td></tr>
+<tr><td>Single-page app</td><td>Single-page app</td><td><code>gtm.historyChange-v2, virtual_page_view, trial_start</code></td><td>History Change; Custom Event</td></tr>
+<tr><td>404 page</td><td>any missing URL</td><td><code>page_type: error_404</code></td><td>Page View with a Page Type condition</td></tr>
+</tbody></table></div>
+<h2>Test coupon codes</h2>
+<p><code>TEST10</code> (10% off) and <code>WELCOME20</code> (20% off). Anything else is rejected.</p>
+<h2>Deliberate mistakes</h2>
+<p>The contact form puts the visitor's email in the dataLayer (<code>lead_email</code>). Mistakes on the GTM side are
+added in the container itself.</p>
+</main>
+<script src="/assets/layout.js"></script>
+<script src="/assets/consent.js"></script>
+<script src="/assets/shop.js"></script>
+<script src="/assets/interactions.js"></script>
+<script src="/assets/dlviewer.js"></script>
+</body>
+</html>

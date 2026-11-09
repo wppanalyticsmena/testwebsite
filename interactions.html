@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en" data-page="interactions">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Clicks & components · Demo Store (test site)</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="/assets/site.css">
+<script src="/assets/datalayer.js"></script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NXT4LB98');</script>
+<!-- End Google Tag Manager -->
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NXT4LB98"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<main>
+<h1>Clicks & components</h1>
+<p class="muted">Buttons, links and page components that tags often track. Links push nothing themselves: GTM's
+click triggers pick them up. Components push their own events. See the <a href="/tracking-map.html">tracking map</a>.</p>
+
+<section class="panel" id="buttons">
+<h2>Buttons</h2>
+<div class="row">
+<button id="cta-main" class="button" type="button">Get started</button>
+<button id="cta-icon" class="button secondary" type="button"><span class="icon" aria-hidden="true">★</span>
+<span class="label">Button with an icon inside</span></button>
+<a id="cta-attr" class="button secondary" href="/product.html?id=SKU-008" data-track="promo-link"
+data-position="2">Link with data attributes</a>
+</div>
+<p class="small muted">Click the star itself on the second button: GTM's Click Element is the inner span, a
+classic gotcha.</p>
+</section>
+
+<section class="panel" id="links">
+<h2>Links</h2>
+<ul>
+<li><a href="/product.html?id=SKU-001">Internal link</a></li>
+<li><a href="https://www.example.com/partner" target="_blank" rel="noopener">Outbound link (new tab)</a></li>
+<li><a href="https://www.google.com/maps/search/?api=1&query=Dubai+Mall" target="_blank" rel="noopener">Map
+directions</a></li>
+<li><a href="tel:+971000000000">Phone: +971 00 000 0000</a></li>
+<li><a href="mailto:hello@example.com?subject=Demo%20enquiry">Email: hello@example.com</a></li>
+<li><a href="https://wa.me/?text=Hello%20Demo%20Store" target="_blank" rel="noopener">WhatsApp</a></li>
+<li><a href="/files/demo-brochure.pdf">File download: brochure (PDF)</a></li>
+<li><a href="#faq">Jump link to the FAQ below</a></li>
+</ul>
+<a class="image-link" href="/product.html?id=SKU-004"><img src="/assets/promo.svg" alt="Audio week offer"
+width="240" height="120"></a>
+</section>
+
+<section class="panel" id="faq">
+<h2>FAQ (accordion)</h2>
+<details data-accordion="faq"><summary>How long is delivery?</summary><p>1–3 days. (Not really.)</p></details>
+<details data-accordion="faq"><summary>Can I return an item?</summary><p>Within 14 days.</p></details>
+<details data-accordion="faq"><summary>Do you ship to Saudi Arabia?</summary><p>Yes.</p></details>
+</section>
+
+<section class="panel">
+<h2>Tabs</h2>
+<div class="tabs" role="tablist">
+<button role="tab" aria-selected="true" aria-controls="tab-specs">Specs</button>
+<button role="tab" aria-selected="false" aria-controls="tab-delivery">Delivery</button>
+<button role="tab" aria-selected="false" aria-controls="tab-warranty">Warranty</button>
+</div>
+<div id="tab-specs" role="tabpanel"><p>Weight 200 g. Battery 30 hours.</p></div>
+<div id="tab-delivery" role="tabpanel" hidden><p>Free delivery over AED 200.</p></div>
+<div id="tab-warranty" role="tabpanel" hidden><p>Two-year warranty.</p></div>
+</section>
+
+<section class="panel">
+<h2>Carousel</h2>
+<div class="slide">Offer 1: 10% off with TEST10</div>
+<div class="slide" hidden>Offer 2: free delivery this week</div>
+<div class="slide" hidden>Offer 3: 20% off with WELCOME20</div>
+<div class="row"><button class="button secondary small" data-slide="-1" type="button">‹ Previous</button>
+<button class="button secondary small" data-slide="1" type="button">Next ›</button></div>
+</section>
+
+<section class="panel">
+<h2>Pop-up, copy code, rating, share</h2>
+<div class="row">
+<button id="open-modal" class="button" type="button">Open special offer</button>
+<button id="copy-code" class="button secondary" type="button">Copy code TEST10</button>
+</div>
+<dialog id="offer-dialog"><form method="dialog"><h2>Special offer</h2><p>Use TEST10 for 10% off.</p>
+<button class="button" value="accept">Use offer</button> <button class="button secondary" value="dismiss">No thanks</button>
+</form></dialog>
+<p>Rate this page:</p>
+<div class="stars" role="group" aria-label="Rating">
+<button data-rating="1" aria-pressed="false" type="button" aria-label="1 star">★</button><button data-rating="2" aria-pressed="false" type="button" aria-label="2 stars">★</button><button data-rating="3" aria-pressed="false" type="button" aria-label="3 stars">★</button><button data-rating="4" aria-pressed="false" type="button" aria-label="4 stars">★</button><button data-rating="5" aria-pressed="false" type="button" aria-label="5 stars">★</button>
+</div>
+<div class="share">Share: <button class="link" data-share="whatsapp" type="button">WhatsApp</button>
+<button class="link" data-share="linkedin" type="button">LinkedIn</button>
+<button class="link" data-share="copy_link" type="button">Copy link</button></div>
+</section>
+
+<section class="panel">
+<h2>Video</h2>
+<p class="small muted">YouTube embed, for GTM's YouTube Video trigger (start, progress, complete).</p>
+<div class="video"><iframe src="https://www.youtube.com/embed/M7lc1UVf-VE?enablejsapi=1" title="YouTube video"
+allow="accelerometer; autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe></div>
+</section>
+
+<section class="panel">
+<h2>Errors and late content</h2>
+<button id="throw-error" class="button secondary" type="button">Cause a JavaScript error</button>
+<p class="small muted">For GTM's JavaScript Error trigger. The page keeps working.</p>
+<div id="lazy-slot"><p class="small muted">An offer will appear here 3 seconds after load.</p></div>
+</section>
+
+<section>
+<h2>Scroll</h2>
+<p class="muted">Keep scrolling: for Scroll Depth (25/50/75/90%) and Element Visibility triggers. Timer triggers
+work on any page.</p>
+<div class="spacer">Keep scrolling…</div>
+<div class="spacer">Almost there…</div>
+<div id="visibility-target" class="banner">You reached the visibility target (#visibility-target)</div>
+</section>
+</main>
+<script src="/assets/layout.js"></script>
+<script src="/assets/consent.js"></script>
+<script src="/assets/shop.js"></script>
+<script src="/assets/interactions.js"></script>
+<script src="/assets/dlviewer.js"></script>
+</body>
+</html>
