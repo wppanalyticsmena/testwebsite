@@ -3,4 +3,6 @@ User-agent: *
 Disallow: /bazaar/private/
 Allow: /northwind/
 Allow: /bazaar/
+Allow: /halfdone/
+Allow: /brochure/
 Disallow: /
