@@ -1,2 +1,6 @@
 User-agent: *
+# Test shops for the GTM Agent pre-proposal scan (fake data).
+Disallow: /bazaar/private/
+Allow: /northwind/
+Allow: /bazaar/
 Disallow: /
